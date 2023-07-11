@@ -1,0 +1,51 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.header-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: antiquewhite;
+}
+.header-menu .header-div-logo-links {
+  display: flex;
+  width: 63%;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+.header-menu .header-div-logo-links .header-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+  width: 80%;
+}
+.header-menu .header-div-phone-order {
+  display: flex;
+  width: 35%;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+.header-menu .header-div-phone-order .header-phone-number {
+  font-size: 19px;
+}
+.header-menu .header-div-phone-order .header-phone-city {
+  font-size: 14px;
+  color: gray;
+}
+.header-menu .header-div-phone-order .header-order-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.header-menu .header-div-phone-order .header-order-button .header-cart .header-cart-number {
+  font-size: 11px;
+  color: gray;
+}

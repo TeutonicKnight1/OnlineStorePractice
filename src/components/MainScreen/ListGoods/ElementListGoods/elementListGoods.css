@@ -1,0 +1,24 @@
+.element-list-goods {
+  margin: 0;
+  box-sizing: border-box;
+}
+.element-list-goods .image-element-list-goods {
+  width: 210px;
+  height: 180px;
+  border-radius: 15%;
+}
+.element-list-goods .count-element-list-goods {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.element-list-goods .count-element-list-goods .add-icon-element-list-goods {
+  margin: 10px;
+}
+.element-list-goods .count-element-list-goods .count-p-element-list-goods {
+  margin: 10px;
+}
+.element-list-goods .count-element-list-goods .remove-icon-element-list-goods {
+  margin: 10px;
+}
