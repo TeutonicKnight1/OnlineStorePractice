@@ -20,7 +20,7 @@ const ElementListGoods = (props) => {
             name,
             price,
             image,
-            count
+            count: count + 1
         }));
         dispatch(setSumPrice({ cart: [...cart, { id, name, price, image, count }] })); //анти-задержка в один элемент
     };
