@@ -1,0 +1,49 @@
+* .cart-element {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px black solid;
+  border-radius: 15px;
+}
+* .cart-element .cart-element-image {
+  margin: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 5%;
+}
+* .cart-element .cart-element-info {
+  margin: 0 0 0 10px;
+  width: 82%;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+* .cart-element .cart-element-info .cart-element-info-name {
+  margin: 0;
+  font-size: 20px;
+}
+* .cart-element .cart-element-info .cart-element-info-price {
+  margin: 0;
+}
+* .cart-element .cart-element-info .cart-element-info-count {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+* .cart-element .cart-element-info .cart-element-info-count .cart-element-info-count-add {
+  margin: 5px;
+}
+* .cart-element .cart-element-info .cart-element-info-count .cart-element-info-count-number {
+  margin: 5px;
+}
+* .cart-element .cart-element-info .cart-element-info-count .cart-element-info-count-remove {
+  margin: 5px;
+}

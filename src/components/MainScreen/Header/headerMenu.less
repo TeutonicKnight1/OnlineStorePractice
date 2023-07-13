@@ -1,3 +1,8 @@
+@primary-color: #222831;
+@secondary-color: #00ADB5;
+@primary-font-color: white;
+@secondary-font-color: rgb(172, 244, 255);
+
 a {
   text-decoration: none;
   color: inherit;
@@ -8,8 +13,11 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: antiquewhite;
-  
+  border-radius: 0 0 15px 15px;
+
+  background-color: @primary-color;
+  color: @primary-font-color;
+
   .header-div-logo-links {
     display: flex;
     width: 63%;
@@ -42,7 +50,7 @@ a {
 
     .header-phone-city {
       font-size: 14px;
-      color: gray;
+      color: @secondary-font-color;
     }
     
     .header-order-button {
@@ -55,7 +63,7 @@ a {
 
         .header-cart-number {
           font-size: 11px;
-          color: gray;
+          color: @secondary-font-color;
         }
       }
     }

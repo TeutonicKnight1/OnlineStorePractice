@@ -1,11 +1,20 @@
+@primary-color: #222831;
+@secondary-color: #00ADB5;
+@primary-font-color: white;
+@secondary-font-color: rgb(172, 244, 255);
+
 .element-list-goods {
     margin: 0;
     box-sizing: border-box;
-    
+    background-color: @primary-color;
+    color: @primary-font-color;
+    border-radius: 5%;
+    padding: 10px;
+
     .image-element-list-goods {
         width: 210px;
         height: 180px;
-        border-radius: 15%;
+        border-radius: 5%;
     }
 
     .count-element-list-goods {
@@ -20,6 +29,7 @@
 
         .count-p-element-list-goods {
             margin: 10px;
+            color: @secondary-font-color;
         }
 
         .remove-icon-element-list-goods {

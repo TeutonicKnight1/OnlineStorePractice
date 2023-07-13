@@ -1,14 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
-let DATA = require("../data/data");
+const DATA = require("../data/data");
 
-const sortSlice = createSlice({
-    name: 'sort',
+export const listGoodsSlice = createSlice({
+    name: "counter",
     initialState: {
+        data: DATA.DATA,
         type: 'sort-name',
         sortDirection: 'ascending',
-        data: DATA.DATA
     },
     reducers: {
+        increment: (state, action) => {
+            state.data[action.payload.id].count += 1;
+        },
+        decrement: (state, action) => {
+            if (state.data[action.payload.id].count > 0) {
+                state.data[action.payload.id].count -= 1;
+            }
+        },
         setSort: (state, action) => {
             state.type = action.payload;
         },
@@ -32,8 +40,8 @@ const sortSlice = createSlice({
 
             state.data = sortedData;
         }
-    },
+    }
 })
 
-export const { setSort, setSortDirection, sortData } = sortSlice.actions;
-export default sortSlice.reducer;
+export const { increment, decrement, setSort, setSortDirection, sortData } = listGoodsSlice.actions;
+export default listGoodsSlice.reducer;

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import "./headerMenu.css";
 
 const HeaderMenu = () => {
-    const sumPrice = useSelector((state) => state.headerSumPrice.sumPrice);
+    const sumPrice = useSelector((state) => state.cart.sumPrice);
 
     return (
         <div className="header-menu">

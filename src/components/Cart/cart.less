@@ -1,0 +1,98 @@
+@primary-color: #222831;
+@secondary-color: #00ADB5;
+@primary-font-color: white;
+@secondary-font-color: rgb(172, 244, 255);
+
+* {
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    
+    .cart {
+
+        .cart-body{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 10px;
+
+            .cart-body-grid {
+                margin: 0;
+                width: 75%;
+
+                .cart-body-grid-header {
+                    border: 1px black solid;
+                    border-radius: 15px;
+                    background-color: @primary-color;
+                    color: @primary-font-color;
+                    height: 48px;
+                    margin: 0 0 10px 0;
+
+                    .cart-body-grid-header-title {
+                        font-size: 24px;
+                        margin: 9px 20px;
+                    }
+                }
+
+                
+            }
+
+            .cart-body-info {
+                margin: 0 0 0 10px;
+                padding: 20px;
+                width: 24.5%;
+                height: 500px;
+                border-radius: 15px;
+                background-color: @primary-color;
+                
+                .cart-body-info-text {
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    
+                    .cart-body-info-text-header {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        margin: 0;
+
+                        .cart-body-info-text-header-title {
+                            margin: 0;
+                            font-size: 24px;
+                            color: @primary-font-color;
+                        }
+
+                        .cart-body-info-text-header-sum {
+                            margin: 0;
+                            font-size: 24px;
+                            color: @secondary-font-color;
+
+                        }
+                    }
+
+                    .cart-body-info-text-delivery {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        margin: 15px 0 0 0 ;
+
+                        .cart-body-info-text-delivery-title {
+                            margin: 0;
+                            font-size: 15px;
+                            color: @primary-font-color;
+                        }
+
+                        .cart-body-info-text-delivery-sum {
+                            margin: 0;
+                            font-size: 15px;
+                            color: @secondary-font-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

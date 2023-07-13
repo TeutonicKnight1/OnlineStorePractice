@@ -4,14 +4,14 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useSelector, useDispatch } from "react-redux";
 import { addGoodsCart, removeGoodsCart } from "../../../../slices/cartSlice";
-import { increment, decrement } from "../../../../slices/counterSlice";
-import { setSumPrice } from "../../../../slices/headerSumPriceSlice";
+import { increment, decrement } from "../../../../slices/listGoodsSlice";
+import { setSumPrice } from "../../../../slices/cartSlice";
 
 const ElementListGoods = (props) => {
     const dispatch = useDispatch();
     const {id, name, price, image} = props;
     const cart = useSelector((state) => state.cart.cart);
-    const count = useSelector((state) => state.counter.data.DATA[id].count);
+    const count = useSelector((state) => state.listGoods.data[id].count);
 
     const handleAddToCart = () => {
         dispatch(increment({ id }));
@@ -22,7 +22,7 @@ const ElementListGoods = (props) => {
             image,
             count: count + 1
         }));
-        dispatch(setSumPrice({ cart: [...cart, { id, name, price, image, count }] })); //анти-задержка в один элемент
+        dispatch(setSumPrice({ cart: [...cart, { id, name, price, image, count: count + 1 }] })); //анти-задержка в один элемент
     };
 
     const handleRemoveFromCart = () => {
@@ -39,12 +39,14 @@ const ElementListGoods = (props) => {
                 <p>{price} р.</p>
                 <div className="count-element-list-goods">
                     <AddIcon 
+                        color="secondary"
                         className="add-icon-element-list-goods" 
                         fontSize="medium" 
                         onClick={handleAddToCart}
                     />
                     <p className="count-p-element-list-goods">{count}</p>
                     <RemoveIcon 
+                        color="secondary"
                         className="remove-icon-element-list-goods" 
                         fontSize="medium" 
                         onClick={handleRemoveFromCart}

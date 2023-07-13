@@ -1,15 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import cartReducer from '../slices/cartSlice';
-import counterSlice from '../slices/counterSlice';
-import headerSumPriceSlice from '../slices/headerSumPriceSlice';
-import sortSlice from '../slices/sortSlice';
+import listGoodsSlice from '../slices/listGoodsSlice';
 
 const store = configureStore({
     reducer: {
         cart: cartReducer,
-        counter: counterSlice,
-        headerSumPrice: headerSumPriceSlice,
-        sort: sortSlice
+        listGoods: listGoodsSlice,
     },
     devTools: process.env.NODE_ENV !== 'production',
 });
