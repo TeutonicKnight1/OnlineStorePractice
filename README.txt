@@ -3,3 +3,5 @@
     npm install react react-dom 
     npm install react-scripts
     package.json: "start": "react-scripts start"
+
+    alt+Shit+F

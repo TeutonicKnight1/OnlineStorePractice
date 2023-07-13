@@ -1,10 +1,13 @@
 import React from "react";
 import "./adressInfoStep.css";
+import MapComponent from "./mapComponent/mapComponent";
 
 const AdressInfoStep = () => {
     return (
-        <div>
-            <h1>AdressInfoStep</h1>
+        <div className="adress-info-step">
+            <div className="adress-info-step-map">
+                <MapComponent key="map1"/>
+            </div>
         </div>
     )
 }

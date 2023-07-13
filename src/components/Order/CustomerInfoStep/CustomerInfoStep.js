@@ -100,7 +100,14 @@ const CustomerInfoStep = () => {
                     </div>
                 </div>
                 <div style={{ marginTop: '20px' }}>
-                    <Button variant="contained" size="large" sx={{ marginLeft: '88%'}} onClick={() => dispatch(setStep(2))}>Далее</Button>
+                    <Button 
+                        variant="contained" 
+                        size="large" 
+                        sx={{ marginLeft: '88%'}} 
+                        onClick={() => dispatch(setStep(2))}
+                    >
+                        Далее
+                    </Button>
                 </div>
             </form>
         </div>

@@ -22,7 +22,7 @@ const Order = () => {
                     <div className="order-stepper-two-number step">2</div>
                     <div className="order-stepper-two-text">Информация об оплате</div>
                 </div>
-                <div className="line"/>
+                <div className={step === 3 ? "line line-step-complited" : "line"}/>
                 <div className="order-stepper-three">
                     <div className="order-stepper-three-number step">3</div>
                     <div className="order-stepper-three-text">Адрес доставки</div>
