@@ -5,6 +5,7 @@ import "./cart.css";
 import HeaderMenu from "../MainScreen/Header/HeaderMenu";
 import CartElement from "./CartElement/CartElement";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
     const dispatch = useDispatch();
@@ -46,17 +47,19 @@ const Cart = () => {
                         </div>
                     </div>
                     <div>
-                        <Button 
-                            variant="contained" 
-                            color="secondary"
-                            sx={{
-                                width: '100%',
-                                maxWidth: '210px',
-                                fontSize: '12px'
-                            }}
-                        >
-                            Перейти к оформлению
-                        </Button>
+                        <Link to="/order">
+                            <Button 
+                                variant="contained" 
+                                color="secondary"
+                                sx={{
+                                    width: '100%',
+                                    maxWidth: '210px',
+                                    fontSize: '12px'
+                                }}
+                            >
+                                Перейти к оформлению
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </div>

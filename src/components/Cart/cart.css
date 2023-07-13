@@ -31,12 +31,12 @@
   height: 500px;
   border-radius: 15px;
   background-color: #222831;
-}
-* .cart .cart-body .cart-body-info .cart-body-info-text {
-  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+* .cart .cart-body .cart-body-info .cart-body-info-text {
+  margin: 0;
 }
 * .cart .cart-body .cart-body-info .cart-body-info-text .cart-body-info-text-header {
   display: flex;
