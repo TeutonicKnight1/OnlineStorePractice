@@ -1,0 +1,16 @@
+* .order-processed .order-processed-title {
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 15px;
+  width: 100%;
+  background-color: #222831;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+* .order-processed .order-processed-title .order-processed-title-text {
+  font-size: 24px;
+  margin: 5px;
+}

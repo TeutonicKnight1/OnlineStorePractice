@@ -5,13 +5,48 @@ import { useState } from "react"
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { setStep } from "../../../slices/orderSlice";
-import { makeStyles } from "@mui/material";
+import { setInfoStep1 } from "../../../slices/customerSlice";
 
 const CustomerInfoStep = () => {
     const dispatch = useDispatch();
 
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [middleName, setMiddleName] = useState('');
+    const [numberPassport, setNumberPassport] = useState('');
+    const [yearPassport, setYearPassport] = useState('');
+    const [issuedPassport, setIssuedPassport] = useState('');
+
     const [phoneNumber, setPhoneNumber] = useState('');
     const [phoneNumberError, setPhoneNumberError] = useState(false);
+
+    const handleFirstNameChange = (event) => {
+        setFirstName(event.target.value);
+    }
+    const handleLastNameChange = (event) => {
+        setLastName(event.target.value);
+    }
+    const handleMiddleNameChange = (event) => {
+        setMiddleName(event.target.value);
+    }
+    const handleNumberPassportChange = (event) => {
+        setNumberPassport(event.target.value);
+    }
+    const handleYearPassportChange = (event) => {
+        setYearPassport(event.target.value);
+    }
+    const handleIssuedPassportChange = (event) => {
+        setIssuedPassport(event.target.value);
+    }
+
+    const handleButtonClick = () => {
+        dispatch(setInfoStep1({
+            name: `${firstName} ${lastName} ${middleName}`,
+            phone: phoneNumber,
+            passport: `${numberPassport} ${yearPassport} ${issuedPassport}`,
+        }))
+        dispatch(setStep(2));
+    }
 
     const handleInputChange = (event) => {
         const value = event.target.value;
@@ -32,6 +67,7 @@ const CustomerInfoStep = () => {
                             label="Имя"
                             variant="filled"
                             color="primary"
+                            onChange={handleFirstNameChange}
                             focused
                         />
                         <TextField 
@@ -43,6 +79,7 @@ const CustomerInfoStep = () => {
                                 margin: '0 20px',
                                 borderRadius: '100px'
                             }}
+                            onChange={handleLastNameChange}
                             focused
                         />
                         <TextField 
@@ -50,6 +87,7 @@ const CustomerInfoStep = () => {
                             label="Отчество"
                             variant="filled"
                             color="primary"
+                            onChange={handleMiddleNameChange}
                             focused
                         />
                     </div>
@@ -74,6 +112,7 @@ const CustomerInfoStep = () => {
                             label="Серия и номер паспорта"
                             variant="filled"
                             color="primary"
+                            onChange={handleNumberPassportChange}
                             focused
                         />
                         <TextField 
@@ -85,6 +124,7 @@ const CustomerInfoStep = () => {
                                 margin: '0 20px',
                                 borderRadius: '100px'
                             }}
+                            onChange={handleYearPassportChange}
                             focused
                         />
                     </div>
@@ -94,6 +134,7 @@ const CustomerInfoStep = () => {
                             label="Кем выдан"
                             variant="filled"
                             color="primary"
+                            onChange={handleIssuedPassportChange}
                             focused
                             fullWidth
                         />
@@ -104,7 +145,7 @@ const CustomerInfoStep = () => {
                         variant="contained" 
                         size="large" 
                         sx={{ marginLeft: '88%'}} 
-                        onClick={() => dispatch(setStep(2))}
+                        onClick={handleButtonClick}
                     >
                         Далее
                     </Button>
