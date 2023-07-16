@@ -1,8 +1,51 @@
+@primary-color: #222831;
+@secondary-color: #00ADB5;
+@primary-font-color: white;
+@secondary-font-color: rgb(172, 244, 255);
+
 .main-menu {
   margin: 0;
   font-family: Arial, sans-serif;
   font-size: 17px;
   width: 280px;
   height: 537px;
-  border: 1px black solid;
+  border: 3px @primary-color solid;
+  border-radius: 15px;
+  overflow: hidden;
+
+  .main-menu-title {
+    background-color: @primary-color;
+    padding: 11px;
+    height: 45px;
+    color: @primary-font-color;
+    margin: 0 0 10px 0;
+
+    .main-menu-title-text {
+      font-size: 20px;
+    }
+  }
+
+  .main-menu-categories {
+    
+    .main-menu-categories-title {
+      background-color: @primary-color;
+      padding: 11px;
+      height: 45px;
+      color: @primary-font-color;
+      
+      .main-menu-categories-title-text {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .main-menu-price {
+    .main-meny-price-title {
+      
+    }
+
+    .main-menu-price-body {
+      
+    }
+  }
 }

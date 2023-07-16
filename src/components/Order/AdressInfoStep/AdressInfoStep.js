@@ -11,7 +11,7 @@ const AdressInfoStep = () => {
 
   const HandleClick = () => {
     dispatch(setStep(4));
-  }
+  };
 
   return (
     <div className="adress-info-step">
@@ -84,9 +84,25 @@ const AdressInfoStep = () => {
             focused
           />
         </div>
-        <Button variant="contained" size="large" sx={{ height: "40px" } } onClick={HandleClick}>
-          Далее
-        </Button>
+        <div style={{ margin: "0" }}>
+          <Button
+            variant="contained"
+            size="large"
+            onClick={() => dispatch(setStep(2))}
+          >
+            Назад
+          </Button>
+          <Button
+            variant="contained"
+            size="large"
+            sx={{
+              marginLeft: "10px",
+            }}
+            onClick={HandleClick}
+          >
+            Далее
+          </Button>
+        </div>
       </div>
     </div>
   );

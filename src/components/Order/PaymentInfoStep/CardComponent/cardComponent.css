@@ -1,0 +1,35 @@
+* .card-component {
+  margin: 0;
+  width: 17vw;
+  height: 10.2vw;
+  background-color: #222831;
+  border-radius: 15px;
+  color: white;
+  overflow: hidden;
+}
+* .card-component .card-component-number {
+  display: inline-block;
+  margin: 25% 0 0 10%;
+  font-size: 24px;
+}
+* .card-component .card-component-div-data-code {
+  display: flex;
+  justify-content: space-between;
+  height: 24px;
+  margin: 3% 55% 0 10%;
+}
+* .card-component .card-component-div-data-code .card-component-date {
+  margin: 0;
+  display: inline-block;
+  font-size: 18px;
+  color: #acf4ff;
+}
+* .card-component .card-component-div-data-code .card-component-code {
+  margin: 0;
+  font-size: 18px;
+}
+* .card-component .card-component-owner-name {
+  display: block;
+  margin: 3% 0 0 10%;
+  font-size: 22px;
+}

@@ -19,6 +19,11 @@ a {
   justify-content: space-around;
   align-items: center;
 }
+.header-menu .header-div-logo-links .header-logo {
+  background-color: #00ADB5;
+  margin: 0 10px 5px 10px;
+  border-radius: 15px;
+}
 .header-menu .header-div-logo-links .header-links {
   display: flex;
   flex-direction: row;

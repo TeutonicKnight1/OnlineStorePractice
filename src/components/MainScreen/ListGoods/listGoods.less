@@ -5,4 +5,16 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
+
+    .list-goods-item {
+        transition: width 2s ease;
+    }
+      
+    .list-goods-item.expanded {
+        width: 100% !important;
+        grid-column: 1 / span 3;
+        grid-row: span 2;
+    }
+
 }
+

@@ -4,5 +4,26 @@
   font-size: 17px;
   width: 280px;
   height: 537px;
-  border: 1px black solid;
+  border: 3px #222831 solid;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.main-menu .main-menu-title {
+  background-color: #222831;
+  padding: 11px;
+  height: 45px;
+  color: white;
+  margin: 0 0 10px 0;
+}
+.main-menu .main-menu-title .main-menu-title-text {
+  font-size: 20px;
+}
+.main-menu .main-menu-categories .main-menu-categories-title {
+  background-color: #222831;
+  padding: 11px;
+  height: 45px;
+  color: white;
+}
+.main-menu .main-menu-categories .main-menu-categories-title .main-menu-categories-title-text {
+  font-size: 17px;
 }
