@@ -4,6 +4,7 @@ const DATA = require("../data/data");
 export const listGoodsSlice = createSlice({
     name: "counter",
     initialState: {
+        originalData: DATA.DATA,
         data: DATA.DATA,
         type: 'sort-name',
         sortDirection: 'ascending',
@@ -39,9 +40,15 @@ export const listGoodsSlice = createSlice({
             }
 
             state.data = sortedData;
+        },
+        setPriceRangeData: (state, action) => {
+            const { min, max } = action.payload;
+            const sortedData = state.originalData.slice().sort((a,b) => a.price - b.price);
+            const filtredData = sortedData.filter((item) => item.price >= min && item.price <= max);
+            state.data = filtredData;
         }
     }
 })
 
-export const { increment, decrement, setSort, setSortDirection, sortData } = listGoodsSlice.actions;
+export const { increment, decrement, setSort, setSortDirection, sortData, setPriceRangeData } = listGoodsSlice.actions;
 export default listGoodsSlice.reducer;

@@ -7,7 +7,7 @@
   margin: 0;
   font-family: Arial, sans-serif;
   font-size: 17px;
-  width: 280px;
+  width: 260px;
   height: 537px;
   border: 3px @primary-color solid;
   border-radius: 15px;
@@ -18,34 +18,92 @@
     padding: 11px;
     height: 45px;
     color: @primary-font-color;
-    margin: 0 0 10px 0;
+    margin: 0 0 2px 0;
 
     .main-menu-title-text {
       font-size: 20px;
     }
   }
 
-  .main-menu-categories {
+  .main-menu-vendor {
     
-    .main-menu-categories-title {
+    .main-menu-vendor-title {
       background-color: @primary-color;
       padding: 11px;
       height: 45px;
       color: @primary-font-color;
       
-      .main-menu-categories-title-text {
+      .main-menu-vendor-title-text {
         font-size: 17px;
+      }
+    }
+
+    .main-menu-vendor-body {
+      overflow: hidden;
+      height: 150px;
+      padding: 10px;
+
+      .main-menu-vendor-body-scrollable {
+        height: 100%;
+        overflow-y: auto;
       }
     }
   }
 
   .main-menu-price {
-    .main-meny-price-title {
-      
+
+    .main-menu-price-title {
+      background-color: @primary-color;
+      padding: 11px;
+      height: 45px;
+      color: @primary-font-color;
+
+      .main-menu-price-title-text {
+        font-size: 17px;
+      }
     }
 
     .main-menu-price-body {
-      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+
+      .main-menu-price-slider {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 10px 0;
+        width: 100%;
+      }
+
+      .main-menu-price-input-range {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        .main-menu-price-input-range-div-text {
+          display: flex;
+          align-items: center;
+          margin: 0;
+
+          .main-menu-price-input-range-div-text-min {
+            font-size: 18px;
+          }
+
+          .main-menu-price-input-range-div-text-max {
+            font-size: 18px;
+          }
+        }
+
+        .main-menu-price-input-range-div {
+          margin: 0;
+        }
+
+      }
+
     }
   }
 }
