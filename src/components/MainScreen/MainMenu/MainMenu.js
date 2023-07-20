@@ -9,7 +9,7 @@ import {
   Button,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { setPriceRangeData } from "../../../slices/listGoodsSlice";
+import { FilterData } from "../../../slices/listGoodsSlice";
 
 const MainMenu = () => {
   const dispatch = useDispatch();
@@ -29,9 +29,11 @@ const MainMenu = () => {
   }, []);
 
   const handleButtonClick = () => {
-      dispatch(setPriceRangeData({
+    const selectedVendors = Object.keys(vendorArr).filter(key => vendorArr[key]);
+      dispatch(FilterData({
         min: priceRange[0],
         max: priceRange[1],
+        vendors: selectedVendors
       }))
   }
 

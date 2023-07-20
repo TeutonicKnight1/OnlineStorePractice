@@ -1,0 +1,79 @@
+@primary-color: #222831;
+@secondary-color: #00ADB5;
+@primary-font-color: white;
+@secondary-font-color: rgb(172, 244, 255);
+
+* {
+
+    .footer {
+        margin-top: 10px;
+        border-radius: 15px 15px 0 0;
+        
+        font-size: 20px;
+        width: 75vw;
+        background-color: @primary-color;
+        color: @primary-font-color;
+
+        .footer-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px;
+            
+            .footer-content-logo {
+                background-color: @secondary-color;
+                width: 85px;
+                height: 90px;
+                padding: 5px;
+                border-radius: 15px;
+                margin: 0;
+            }
+
+            .footer-content-text {
+                width: 100%;
+                margin-left: 10px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                
+                .footer-content-text-github-a {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+
+                .footer-content-text-mail {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+
+                .footer-content-text-phone {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+            }
+        }
+
+        .footer-copyright {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            background-color: @secondary-color;
+            color: @primary-font-color;
+
+            .footer-copyright-text {
+                margin: 25px 5px;
+            }
+        }
+    }
+}

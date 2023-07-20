@@ -14,8 +14,3 @@
   flex-direction: row;
   justify-content: space-between;
 }
-* .main-screen .main-screen-content .main-screen-content-grid .main-screen-content-grid-sort {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}

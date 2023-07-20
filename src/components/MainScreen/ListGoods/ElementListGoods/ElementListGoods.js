@@ -9,7 +9,7 @@ import { setSumPrice } from "../../../../slices/cartSlice";
 
 const ElementListGoods = (props) => {
     const dispatch = useDispatch();
-    const {id, name, price, image} = props;
+    const {id, name, price, image,} = props;
     const cart = useSelector((state) => state.cart.cart);
     const count = useSelector((state) => state.listGoods.data[id]?.count);
 

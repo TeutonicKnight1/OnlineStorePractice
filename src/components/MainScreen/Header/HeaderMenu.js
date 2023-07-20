@@ -11,7 +11,9 @@ const HeaderMenu = () => {
     return (
         <div className="header-menu">
             <div className="header-div-logo-links">
-                <img src={logo} alt="Логотип logo" className="header-logo" width={75} height={80}></img>
+                <Link to="/" style={{ margin: '0'}}>
+                    <img src={logo} alt="Логотип logo" className="header-logo" width={75} height={80}/>
+                </Link>
                 <div className="header-links">
                     <Link className="header-about">О компании</Link>
                     <Link className="header-delivery">Доставка и оплата</Link>

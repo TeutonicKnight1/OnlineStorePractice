@@ -6,6 +6,7 @@ import CustomerInfoStep from "./CustomerInfoStep/CustomerInfoStep";
 import AdressInfoStep from "./AdressInfoStep/AdressInfoStep";
 import PaymentInfoStep from "./PaymentInfoStep/PaymentInfoStep";
 import OrderProcessed from "./OrderProcessed/OrderProcessed";
+import Footer from "../MainScreen/Footer/Footer";
 
 const Order = () => {
   const step = useSelector((state) => state.order.step);
@@ -39,6 +40,7 @@ const Order = () => {
         {step === 3 && <AdressInfoStep />}
         {step === 4 && <OrderProcessed />}
       </div>
+      <Footer/>
     </div>
   );
 };
