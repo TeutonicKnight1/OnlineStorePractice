@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./footer.css";
 
 import logo from "../../../static/logo.svg";
@@ -9,9 +9,19 @@ import LocalPhoneSharpIcon from "@mui/icons-material/LocalPhoneSharp";
 
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer = (props) => {
+  const mainBlockName = props.mainBlockName;
+  const [viewportHeight, setViewportHeight] = useState(0);
+  const [mainBlockHeight, setMainBlockHeight] = useState(0);
+  
+  useEffect (() => {
+    const mainBlock = document.querySelector(`.${mainBlockName}`);
+    setMainBlockHeight(mainBlock.offsetHeight);
+    setViewportHeight(window.innerHeight);
+  }, [mainBlockName]);
+
   return (
-    <div className="footer">
+    <div className={mainBlockHeight > viewportHeight ? "footer" : "footer footer-sticky-bottom"}>
       <div className="footer-content">
         <div className="footer-content-logo">
           <Link to="/">

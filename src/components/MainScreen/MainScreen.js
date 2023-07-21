@@ -18,7 +18,7 @@ const MainScreen = () => {
                     <ListGoods/>
                 </div>
             </div>
-            <Footer/>
+            <Footer mainBlockName="main-screen"/>
         </div>
     )
 }

@@ -68,7 +68,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer mainBlockName="cart"/>
     </div>
   );
 };

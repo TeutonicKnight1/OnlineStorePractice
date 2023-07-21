@@ -40,7 +40,7 @@ const Order = () => {
         {step === 3 && <AdressInfoStep />}
         {step === 4 && <OrderProcessed />}
       </div>
-      <Footer/>
+      <Footer mainBlockName="order"/>
     </div>
   );
 };
