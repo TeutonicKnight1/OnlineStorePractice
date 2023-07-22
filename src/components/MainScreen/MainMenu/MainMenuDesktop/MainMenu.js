@@ -9,11 +9,11 @@ import {
   Button,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { FilterData } from "../../../slices/listGoodsSlice";
+import { FilterData } from "../../../../slices/listGoodsSlice";
 
 const MainMenu = () => {
   const dispatch = useDispatch();
-  const DATA = require("../../../data/data");
+  const DATA = require("../../../../data/data");
   const data = DATA.DATA;
 
   const [priceRange, setPriceRange] = useState([,]);

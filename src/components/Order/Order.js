@@ -1,12 +1,12 @@
 import React from "react";
-import Header from "../MainScreen/Header/HeaderMenu";
+import Header from "../MainScreen/Header/HeaderDesktop/HeaderMenu";
 import "./order.css";
 import { useSelector } from "react-redux";
 import CustomerInfoStep from "./CustomerInfoStep/CustomerInfoStep";
 import AdressInfoStep from "./AdressInfoStep/AdressInfoStep";
 import PaymentInfoStep from "./PaymentInfoStep/PaymentInfoStep";
 import OrderProcessed from "./OrderProcessed/OrderProcessed";
-import Footer from "../MainScreen/Footer/Footer";
+import Footer from "../MainScreen/Footer/FooterDesktop/Footer";
 
 const Order = () => {
   const step = useSelector((state) => state.order.step);

@@ -1,0 +1,67 @@
+* .footer-mobile {
+  margin-top: 10px;
+  font-size: 20px;
+  width: 100%;
+  background-color: #222831;
+  color: white;
+}
+* .footer-mobile .footer-mobile-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+* .footer-mobile .footer-mobile-content .footer-mobile-content-logo {
+  background-color: #00ADB5;
+  width: 85px;
+  height: 90px;
+  padding: 5px;
+  border-radius: 15px;
+  margin: 0;
+}
+* .footer-mobile .footer-mobile-content .footer-mobile-content-text {
+  width: 100%;
+  margin-left: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+* .footer-mobile .footer-mobile-content .footer-mobile-content-text .footer-mobile-content-text-github-a {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+* .footer-mobile .footer-mobile-content .footer-mobile-content-text .footer-mobile-content-text-mail {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+* .footer-mobile .footer-mobile-content .footer-mobile-content-text .footer-mobile-content-text-phone {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+* .footer-mobile .footer-mobile-copyright {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #00ADB5;
+  color: white;
+}
+* .footer-mobile .footer-mobile-copyright .footer-mobile-copyright-text {
+  margin: 25px 5px;
+}
+* .footer-mobile-sticky-bottom {
+  position: fixed;
+  bottom: 0;
+}

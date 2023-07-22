@@ -5,11 +5,16 @@
   color: white;
   border-radius: 5%;
   padding: 10px;
+  width: 230px;
 }
 .element-list-goods .image-element-list-goods {
   width: 210px;
   height: 180px;
   border-radius: 5%;
+}
+.element-list-goods .image-element-list-goods-mobile {
+  width: 160px;
+  height: 145px;
 }
 .element-list-goods .count-element-list-goods {
   margin: 0;
@@ -26,4 +31,7 @@
 }
 .element-list-goods .count-element-list-goods .remove-icon-element-list-goods {
   margin: 10px;
+}
+.element-list-goods-mobile {
+  width: 180px;
 }

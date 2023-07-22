@@ -2,11 +2,11 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./cart.css";
-import HeaderMenu from "../MainScreen/Header/HeaderMenu";
+import HeaderMenu from "../MainScreen/Header/HeaderDesktop/HeaderMenu";
 import CartElement from "./CartElement/CartElement";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import Footer from "../MainScreen/Footer/Footer";
+import Footer from "../MainScreen/Footer/FooterDesktop/Footer";
 
 const Cart = () => {
   const dispatch = useDispatch();
