@@ -4,8 +4,8 @@ import TextField from '@mui/material/TextField';
 import { useState } from "react"
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { setStep } from "../../../slices/orderSlice";
-import { setInfoStep1 } from "../../../slices/customerSlice";
+import { setStep } from "../../../../slices/orderSlice";
+import { setInfoStep1 } from "../../../../slices/customerSlice";
 
 const CustomerInfoStep = () => {
     const dispatch = useDispatch();
@@ -77,7 +77,6 @@ const CustomerInfoStep = () => {
                             color="primary"
                             sx={{ 
                                 margin: '0 20px',
-                                borderRadius: '100px'
                             }}
                             onChange={handleLastNameChange}
                             focused
@@ -122,7 +121,6 @@ const CustomerInfoStep = () => {
                             color="primary"
                             sx={{ 
                                 margin: '0 20px',
-                                borderRadius: '100px'
                             }}
                             onChange={handleYearPassportChange}
                             focused

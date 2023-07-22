@@ -25,7 +25,7 @@ const MainScreen = () => {
           <div className="main-screen-content">
             <div className="main-screen-content-grid">
               <SortButtons />
-              <ListGoods status="mobile"/>
+              <ListGoods status="mobile" />
             </div>
           </div>
           <FooterMobile mainBlockName="main-screen" />
@@ -47,14 +47,6 @@ const MainScreen = () => {
           <Footer mainBlockName="main-screen" />
         </div>
       )}
-      {/* <div className="main-screen-content">
-        <MainMenu />
-        <div className="main-screen-content-grid">
-          <SortButtons />
-          <ListGoods />
-        </div>
-      </div>
-      <Footer mainBlockName="main-screen" /> */}
     </div>
   );
 };

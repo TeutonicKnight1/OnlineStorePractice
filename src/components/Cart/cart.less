@@ -8,7 +8,8 @@
     font-size: 17px;
     
     .cart {
-        height: 100vh;
+        width: 75vw;
+        min-height: 100vh;
         .cart-body{
             display: flex;
             flex-direction: row;
@@ -31,9 +32,7 @@
                         font-size: 24px;
                         margin: 9px 20px;
                     }
-                }
-
-                
+                }   
             }
 
             .cart-body-info {
@@ -95,5 +94,27 @@
             }
         }
     }
+}
 
+@media (max-width: 425px) {
+    .cart {
+        width: 100%;
+
+        .cart-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-top: 10px;
+
+            .cart-body-grid {
+                width: 95%;
+                margin: 0 10px;
+            }
+
+            .cart-body-info {
+                width: 95%;
+                height: 20vh;
+            }
+        }
+    }
 }

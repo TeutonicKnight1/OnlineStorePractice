@@ -1,8 +1,8 @@
 .list-goods {
-  width: 710px;
+  max-width: 55vw;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
 .list-goods-mobile {

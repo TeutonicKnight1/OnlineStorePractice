@@ -3,10 +3,10 @@ import "./paymentInfoStep.css";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { setStep } from "../../../slices/orderSlice";
-import { setInfoStep2 } from "../../../slices/customerSlice";
+import { setStep } from "../../../../slices/orderSlice";
+import { setInfoStep2 } from "../../../../slices/customerSlice";
 
-import CardComponent from "./CardComponent/CardComponent";
+import CardComponent from "../CardComponent/CardComponent";
 
 const PaymentInfoStep = () => {
   const dispatch = useDispatch();

@@ -47,3 +47,8 @@
   margin-left: 10px;
   width: 110px;
 }
+@media (max-width: 425px) {
+  .order {
+    width: 100%;
+  }
+}
