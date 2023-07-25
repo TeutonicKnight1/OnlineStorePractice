@@ -49,7 +49,7 @@ const PaymentInfoStepMobile = () => {
           <h2 className="payment-info-card-title ">
             Информация о банковской карте
           </h2>
-          <div style={{ marginBottom: "10px" }}>
+          <div style={{ marginBottom: "10px", display: "flex", flexDirection: "column", alignItems: "center" }}>
             <CardComponent
               props={{
                 numberCard: numberCard,

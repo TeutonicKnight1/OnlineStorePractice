@@ -81,7 +81,9 @@ function MapComponent() {
           attribution="Map data &copy; OpenStreetMap contributors"
           maxZoom={19}
         />
-        {markerPosition && <Marker position={markerPosition} icon={customIcon} />}
+        {markerPosition && (
+          <Marker position={markerPosition} icon={customIcon} />
+        )}
         <MapEvents />
       </MapContainer>
     </div>

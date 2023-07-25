@@ -3,7 +3,7 @@ import Header from "../MainScreen/Header/HeaderDesktop/HeaderMenu";
 import "./order.css";
 import { useSelector } from "react-redux";
 import CustomerInfoStep from "./CustomerInfoStep/CustomerInfoStepDesktop/CustomerInfoStep";
-import AdressInfoStep from "./AdressInfoStep/AdressInfoStep";
+import AdressInfoStep from "./AdressInfoStep/AdressInfoStepDesktop/AdressInfoStep";
 import PaymentInfoStep from "./PaymentInfoStep/PaymentInfoStepDesktop/PaymentInfoStep";
 import OrderProcessed from "./OrderProcessed/OrderProcessedDesktop/OrderProcessed";
 import Footer from "../MainScreen/Footer/FooterDesktop/Footer";
@@ -13,6 +13,7 @@ import FooterMobile from "../MainScreen/Footer/FooterMobile/FooterMobile";
 import CustomerInfoStepMobile from "./CustomerInfoStep/CustomerInfoStepMobile/CustomerInfoStepMobile";
 import OrderProcessedMobile from "./OrderProcessed/OrderProcessedMobile/OrderProcessedMobile";
 import PaymentInfoStepMobile from "./PaymentInfoStep/PaymentInfoStepMobile/PaymentInfoStepMobile";
+import AdressInfoStepMobile from "./AdressInfoStep/AdressInfoStepMobile/AdressInfoStepMobile";
 
 const Order = () => {
   const isMobile = useMediaQuery({ maxWidth: "425px" });
@@ -30,7 +31,7 @@ const Order = () => {
           <div className="order-step-now">
             {step === 1 && <CustomerInfoStepMobile />}
             {step === 2 && <PaymentInfoStepMobile />}
-            {step === 3 && <AdressInfoStep />}
+            {step === 3 && <AdressInfoStepMobile />}
             {step === 4 && <OrderProcessedMobile />}
           </div>
         </div>
