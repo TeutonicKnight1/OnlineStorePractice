@@ -17,11 +17,21 @@ body {
   flex-direction: row;
   justify-content: space-around;
 }
-* .mobile {
-  width: 100%;
+@media (max-width: 1319px) and (min-width: 1100px) {
+  .main-screen {
+    width: 85vw;
+  }
+}
+@media (max-width: 1099px) and (min-width: 426px) {
+  .main-screen {
+    width: 95vw;
+  }
 }
 @media (max-width: 425px) {
-  .main-screen-content-grid {
+  .main-screen {
+    width: 100%;
+  }
+  .main-screen .main-screen-content-grid {
     margin: 0 10px;
   }
 }

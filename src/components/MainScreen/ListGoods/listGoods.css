@@ -5,8 +5,17 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
-.list-goods-mobile {
-  width: 100%;
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 100%;
+@media (max-width: 1680px) and (min-width: 1320px) {
+  .list-goods {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+  }
+}
+@media (max-width: 1319px) and (min-width: 390px) {
+  .list-goods {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
 }

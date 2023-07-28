@@ -9,7 +9,7 @@ import { setSumPrice } from "../../../../slices/cartSlice";
 
 const ElementListGoods = (props) => {
   const dispatch = useDispatch();
-  const { id, name, price, image, status } = props;
+  const { id, name, price, image } = props;
   const cart = useSelector((state) => state.cart.cart);
   const count = useSelector((state) => state.listGoods.data[id]?.count);
 
@@ -38,17 +38,11 @@ const ElementListGoods = (props) => {
   };
 
   return (
-    <div
-      className={
-        status === "mobile"
-          ? "element-list-goods element-list-goods-mobile"
-          : "element-list-goods"
-      }
-    >
+    <div className="element-list-goods">
       <img
         src={require(`../../../../${image}`)}
         alt="ImageGoods"
-        className={status === "mobile" ? "image-element-list-goods image-element-list-goods-mobile" : "image-element-list-goods"}
+        className="image-element-list-goods"
       />
       <div>
         <p>{name}</p>

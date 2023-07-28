@@ -10,6 +10,7 @@ import LocalPhoneSharpIcon from "@mui/icons-material/LocalPhoneSharp";
 import { Link } from "react-router-dom";
 
 const FooterMobile = (props) => {
+  const footerHeight = 220;
   const mainBlockName = props.mainBlockName;
   const [viewportHeight, setViewportHeight] = useState(0);
   const [mainBlockHeight, setMainBlockHeight] = useState(0);
@@ -21,7 +22,7 @@ const FooterMobile = (props) => {
   }, [mainBlockName]);
 
   return (
-    <div className={mainBlockHeight > viewportHeight ? "footer-mobile" : "footer-mobile footer-mobile-sticky-bottom"}>
+    <div className={mainBlockHeight + footerHeight > viewportHeight ? "footer-mobile" : "footer-mobile footer-mobile-sticky-bottom"}>
       <div className="footer-mobile-content">
         <div className="footer-mobile-content-logo">
           <Link to="/">
