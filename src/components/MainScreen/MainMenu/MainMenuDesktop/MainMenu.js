@@ -16,7 +16,7 @@ const MainMenu = () => {
   const DATA = require("../../../../data/data");
   const data = DATA.DATA;
 
-  const [priceRange, setPriceRange] = useState([,]);
+  const [priceRange, setPriceRange] = useState([0,100]);
   const [vendorArr, setVendorArr] = useState({
     MSI: false,
     ASUS: false,
@@ -71,7 +71,6 @@ const MainMenu = () => {
     const newMaxValue =
       event.target.value !== "" ? parseInt(event.target.value, 10) : 100;
     const newMinValue = priceRange[0];
-    console.log = newMaxValue;
     const newPriceRange = [newMinValue, newMaxValue];
     setPriceRange(newPriceRange);
   };

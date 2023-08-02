@@ -3,58 +3,90 @@ import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { setStep } from "../../../../slices/orderSlice";
-import { setInfoStep1 } from "../../../../slices/customerSlice";
+import {
+  handleFirstNameChange,
+  handleLastNameChange,
+  handleMiddleNameChange,
+  handleNumberPassportChange,
+  handleYearPassportChange,
+  handleIssuedPassportChange,
+  handlePhoneNumberChange,
+  handleInputChange,
+  handleButtonClick,
+} from "../CustomerUtils/CustomerUtils";
 
 const CustomerInfoStepMobile = () => {
   const dispatch = useDispatch();
 
   const [firstName, setFirstName] = useState("");
+  const [firstNameError, setFirstNameError] = useState(false);
   const [lastName, setLastName] = useState("");
+  const [lastNameError, setLastNameError] = useState(false);
   const [middleName, setMiddleName] = useState("");
+  const [middleNameError, setMiddleNameError] = useState(false);
   const [numberPassport, setNumberPassport] = useState("");
+  const [numberPassportError, setNumberPassportError] = useState(false);
   const [yearPassport, setYearPassport] = useState("");
+  const [yearPassportError, setYearPassportError] = useState(false);
   const [issuedPassport, setIssuedPassport] = useState("");
-
+  const [issuedPassportError, setIssuedPassportError] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneNumberError, setPhoneNumberError] = useState(false);
 
-  const handleFirstNameChange = (event) => {
-    setFirstName(event.target.value);
+  const handleFirstNameChangeMobile = (event) => {
+    handleFirstNameChange(event, setFirstName, setFirstNameError);
   };
-  const handleLastNameChange = (event) => {
-    setLastName(event.target.value);
+  const handleLastNameChangeMobile = (event) => {
+    handleLastNameChange(event, setLastName, setLastNameError);
   };
-  const handleMiddleNameChange = (event) => {
-    setMiddleName(event.target.value);
+  const handleMiddleNameChangeMobile = (event) => {
+    handleMiddleNameChange(event, setMiddleName, setMiddleNameError);
   };
-  const handleNumberPassportChange = (event) => {
-    setNumberPassport(event.target.value);
-  };
-  const handleYearPassportChange = (event) => {
-    setYearPassport(event.target.value);
-  };
-  const handleIssuedPassportChange = (event) => {
-    setIssuedPassport(event.target.value);
-  };
-
-  const handleButtonClick = () => {
-    dispatch(
-      setInfoStep1({
-        name: `${firstName} ${lastName} ${middleName}`,
-        phone: phoneNumber,
-        passport: `${numberPassport} ${yearPassport} ${issuedPassport}`,
-      })
+  const handleNumberPassportChangeMobile = (event) => {
+    handleNumberPassportChange(
+      event,
+      setNumberPassport,
+      setNumberPassportError
     );
-    dispatch(setStep(2));
   };
-
-  const handleInputChange = (event) => {
-    const value = event.target.value;
-    setPhoneNumber(value);
-
-    const validPhoneNumber = /^([0-9]{11})?$/.test(value);
-    setPhoneNumberError(!validPhoneNumber);
+  const handleYearPassportChangeMobile = (event) => {
+    handleYearPassportChange(event, setYearPassport, setYearPassportError);
+  };
+  const handleIssuedPassportChangeMobile = (event) => {
+    handleIssuedPassportChange(
+      event,
+      setIssuedPassport,
+      setIssuedPassportError
+    );
+  };
+  const handleButtonClickMobile = () => {
+    handleButtonClick(
+      dispatch,
+      firstName,
+      lastName,
+      middleName,
+      numberPassport,
+      yearPassport,
+      issuedPassport,
+      phoneNumber,
+      firstNameError,
+      lastNameError,
+      middleNameError,
+      numberPassportError,
+      yearPassportError,
+      issuedPassportError,
+      phoneNumberError,
+      setFirstNameError,
+      setLastNameError,
+      setMiddleNameError,
+      setNumberPassportError,
+      setYearPassportError,
+      setIssuedPassportError,
+      setPhoneNumberError
+    );
+  };
+  const handleInputChangeMobile = (event) => {
+    handleInputChange(event, setPhoneNumber, setPhoneNumberError);
   };
 
   return (
@@ -70,7 +102,7 @@ const CustomerInfoStepMobile = () => {
             sx={{
               marginBottom: "10px",
             }}
-            onChange={handleFirstNameChange}
+            onChange={handleFirstNameChangeMobile}
             focused
           />
           <TextField
@@ -81,7 +113,7 @@ const CustomerInfoStepMobile = () => {
             sx={{
               marginBottom: "10px",
             }}
-            onChange={handleLastNameChange}
+            onChange={handleLastNameChangeMobile}
             focused
           />
           <TextField
@@ -92,7 +124,7 @@ const CustomerInfoStepMobile = () => {
             sx={{
               marginBottom: "10px",
             }}
-            onChange={handleMiddleNameChange}
+            onChange={handleMiddleNameChangeMobile}
             focused
           />
           <TextField
@@ -100,7 +132,7 @@ const CustomerInfoStepMobile = () => {
             label="Номер телефона"
             value={phoneNumber}
             error={phoneNumberError}
-            onChange={handleInputChange}
+            onChange={handleInputChangeMobile}
             variant="filled"
             color="primary"
             focused
@@ -115,7 +147,8 @@ const CustomerInfoStepMobile = () => {
             label="Серия и номер паспорта"
             variant="filled"
             color="primary"
-            onChange={handleNumberPassportChange}
+            value={numberPassport}
+            onChange={handleNumberPassportChangeMobile}
             sx={{
               marginBottom: "10px",
             }}
@@ -129,7 +162,8 @@ const CustomerInfoStepMobile = () => {
             sx={{
               marginBottom: "10px",
             }}
-            onChange={handleYearPassportChange}
+            value={yearPassport}
+            onChange={handleYearPassportChangeMobile}
             focused
           />
           <div style={{ margin: "0", width: "240px" }}>
@@ -138,14 +172,15 @@ const CustomerInfoStepMobile = () => {
               label="Кем выдан"
               variant="filled"
               color="primary"
-              onChange={handleIssuedPassportChange}
+              value={issuedPassport}
+              onChange={handleIssuedPassportChangeMobile}
               focused
               fullWidth
             />
           </div>
         </div>
         <div style={{ margin: "10px 0 0 70%" }}>
-          <Button variant="contained" size="large" onClick={handleButtonClick}>
+          <Button variant="contained" size="large" onClick={handleButtonClickMobile}>
             Далее
           </Button>
         </div>

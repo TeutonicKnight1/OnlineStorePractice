@@ -66,7 +66,7 @@ function MapComponent() {
   return (
     <div id="map" style={{ width: "100%", height: "400px" }}>
       <MapContainer
-        center={[51.505, -0.09]}
+        center={[54.3081, 48.3749]}
         zoom={13}
         style={{
           width: "100%",

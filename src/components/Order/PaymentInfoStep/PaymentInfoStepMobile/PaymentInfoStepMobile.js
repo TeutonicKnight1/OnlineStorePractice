@@ -18,28 +18,48 @@ const PaymentInfoStepMobile = () => {
   const handleNumberCardChange = (event) => {
     const inputValue = event.target.value.replace(/\D/g, "");
     const formattedValue = inputValue.replace(/(\d{4})(?=\d)/g, "$1 ");
-    setNumberCard(formattedValue);
+    if (formattedValue.length <= 19) {
+      setNumberCard(formattedValue);
+    }
   };
 
   const handleDateCardChange = (event) => {
-    setDateCard(event.target.value);
+    const inputValue = event.target.value.replace(/\D/g, "");
+    const formattedValue = inputValue.replace(/(\d{2})(?=\d)/g, "$1/");
+    if (formattedValue.length <= 5 && formattedValue.slice(-1) !== "/") {
+      setDateCard(formattedValue);
+    }
   };
 
   const handleCodeCardChange = (event) => {
-    setCodeCard(event.target.value);
+    const inputValue = event.target.value.replace(/\D/g, "");
+    const formattedValue = inputValue.slice(0, 3);
+    setCodeCard(formattedValue);
   };
 
   const handleOwnerCardNameChange = (event) => {
-    setOwnerCardName(event.target.value);
+    const inputValue = event.target.value
+      .replace(/[^a-zA-Z\s]/g, "")
+      .toUpperCase();
+    setOwnerCardName(inputValue);
   };
 
   const handleClick = () => {
+    if (
+      numberCard !== "" &&
+      dateCard !== "" &&
+      codeCard !== "" &&
+      ownerCardName !== ""
+    ) {
     dispatch(
       setInfoStep2({
         card: `${numberCard} ${dateCard} ${codeCard} ${ownerCardName}`,
       })
     );
     dispatch(setStep(3));
+    } else {
+      alert("Заполните все поля!");
+    }
   };
 
   return (
@@ -91,6 +111,7 @@ const PaymentInfoStepMobile = () => {
                     marginRight: "10px",
                     width: "115px",
                   }}
+                  value={dateCard}
                   onChange={handleDateCardChange}
                   focused
                 />
@@ -103,6 +124,7 @@ const PaymentInfoStepMobile = () => {
                     width: "115px",
                   }}
                   onChange={handleCodeCardChange}
+                  value={codeCard}
                   focused
                 />
               </div>
@@ -112,6 +134,7 @@ const PaymentInfoStepMobile = () => {
                 variant="filled"
                 color="primary"
                 onChange={handleOwnerCardNameChange}
+                value={ownerCardName}
                 fullWidth
                 focused
               />
