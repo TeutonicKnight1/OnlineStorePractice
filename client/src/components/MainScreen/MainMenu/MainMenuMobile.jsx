@@ -8,16 +8,16 @@ import {
   Checkbox,
   Button,
 } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FilterData } from "../../../slices/listGoodsSlice";
 import CloseSharpIcon from "@mui/icons-material/CloseSharp";
 import KeyboardArrowRightSharpIcon from "@mui/icons-material/KeyboardArrowRightSharp";
-import data from "../../../data/data";
 const MainMenuMobile = () => {
   const [isOpen, setOpen] = useState(false);
 
   const dispatch = useDispatch();
-
+  
+  const data = useSelector((state) => state.listGoods.data);
   const [priceRange, setPriceRange] = useState([]);
   const [vendorArr, setVendorArr] = useState({
     MSI: false,
@@ -181,7 +181,7 @@ const MainMenuMobile = () => {
                 value={priceRange[0]}
                 sx={{
                   margin: "0 10px",
-                  width: "60px",
+                  width: "80px",
                 }}
                 size="small"
                 onChange={handleMinInputChange}
@@ -195,7 +195,7 @@ const MainMenuMobile = () => {
                 value={priceRange[1]}
                 sx={{
                   margin: "0 10px",
-                  width: "60px",
+                  width: "80px",
                 }}
                 size="small"
                 onChange={handleMaxInputChange}

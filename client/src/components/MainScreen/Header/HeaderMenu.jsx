@@ -9,11 +9,21 @@ import { useState } from "react";
 const HeaderMenu = () => {
   const sumPrice = useSelector((state) => state.cart.sumPrice);
 
-  const [loginActive, setLoginActive] = useState(false);
+  const [loginActive, setLoginActive] = useState(false); //Окошко входа
+  const [loginButtonActive, setLoginButtonActive] = useState(""); //Кнопка входа (устанавливает флаг замены Войти на Выйти)
 
   const loginActiveHandler = () => {
     setLoginActive(!loginActive);
-  }
+  };
+  const unLoginActiveHandler = () => {
+    setLoginButtonActive(false);
+    localStorage.removeItem("token");
+  };
+
+  const loginButtonActiveHandlerTrue = () => { //Вход совершен замена Войти на Выйти
+    setLoginButtonActive(true);
+    setLoginActive(false);
+  };
 
   return (
     <div className="header-menu">
@@ -35,12 +45,24 @@ const HeaderMenu = () => {
           <Link className="header-contacts">Контакты</Link>
         </div>
       </div>
+
+
       <div className="header-div-login">
-        <Link className="header-login" onClick={loginActiveHandler }>
-          <u>Войти</u>
-        </Link>
-        <User loginActive={loginActive}/>
+        {loginButtonActive ? (
+          <Link className="header-login" onClick={unLoginActiveHandler}>
+            <u>Выйти</u>
+          </Link>
+        ) : (
+          <Link className="header-login" onClick={loginActiveHandler}>
+            <u>Войти</u>
+          </Link>
+        )}
+        <User
+          loginActive={loginActive}
+          loginButtonActiveHandlerTrue={loginButtonActiveHandlerTrue}
+        />
       </div>
+
       <div className="header-div-phone-order">
         <div className="header-phone">
           <p className="header-phone-number">+7 (800) 555 35 35</p>

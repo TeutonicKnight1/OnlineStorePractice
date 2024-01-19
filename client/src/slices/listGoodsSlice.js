@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-//import data from "../data/data";
 
 const listGoodsSlice = createSlice({
   name: "counter",
@@ -66,7 +65,6 @@ const listGoodsSlice = createSlice({
       const filteredDataByPrice = sortedData.filter(
         (item) => item.price >= min && item.price <= max
       );
-
       if (vendors.length === 0) {
         state.data = filteredDataByPrice;
       } else {

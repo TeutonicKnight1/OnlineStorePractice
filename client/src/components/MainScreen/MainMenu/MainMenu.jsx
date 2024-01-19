@@ -8,14 +8,14 @@ import {
   Checkbox,
   Button,
 } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FilterData } from "../../../slices/listGoodsSlice";
-import data from "../../../data/data";
 
 const MainMenu = () => {
   const dispatch = useDispatch();
+  const data = useSelector((state) => state.listGoods.data);
 
-  const [priceRange, setPriceRange] = useState([0,100]);
+  const [priceRange, setPriceRange] = useState([0, 10000]);
   const [vendorArr, setVendorArr] = useState({
     MSI: false,
     ASUS: false,
@@ -28,13 +28,17 @@ const MainMenu = () => {
   }, []);
 
   const handleButtonClick = () => {
-    const selectedVendors = Object.keys(vendorArr).filter(key => vendorArr[key]);
-      dispatch(FilterData({
+    const selectedVendors = Object.keys(vendorArr).filter(
+      (key) => vendorArr[key]
+    );
+    dispatch(
+      FilterData({
         min: priceRange[0],
         max: priceRange[1],
-        vendors: selectedVendors
-      }))
-  }
+        vendors: selectedVendors,
+      })
+    );
+  };
 
   const setMinMaxPrice = () => {
     const min = Math.min(...data.map((item) => item.price));
@@ -43,6 +47,7 @@ const MainMenu = () => {
   };
 
   const handleChange = (event, newValue) => {
+    console.log(newValue);
     setPriceRange(newValue);
   };
 
@@ -71,6 +76,7 @@ const MainMenu = () => {
       event.target.value !== "" ? parseInt(event.target.value, 10) : 100;
     const newMinValue = priceRange[0];
     const newPriceRange = [newMinValue, newMaxValue];
+    console.log(event.target.value, newPriceRange);
     setPriceRange(newPriceRange);
   };
 
@@ -160,7 +166,7 @@ const MainMenu = () => {
                 value={priceRange[0]}
                 sx={{
                   margin: "0 10px",
-                  width: "60px",
+                  width: "80px",
                 }}
                 size="small"
                 onChange={handleMinInputChange}
@@ -172,7 +178,7 @@ const MainMenu = () => {
                 value={priceRange[1]}
                 sx={{
                   margin: "0 10px",
-                  width: "60px",
+                  width: "80px",
                 }}
                 size="small"
                 onChange={handleMaxInputChange}
@@ -187,7 +193,7 @@ const MainMenu = () => {
           color="secondary"
           sx={{
             width: "92%",
-            margin: '10px',
+            margin: "10px",
             fontSize: "17px",
             fontWeight: "bold",
           }}

@@ -1,45 +1,42 @@
-const express = require('express');
+const express = require("express");
+const database = require("./services/DatabaseService");
+const cors = require("cors");
+
+const router = require("./router");
+
 const app = express();
-const port = 3307;
 
-const db = require('./db');
+const config = require("./config");
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
-  next();
-})
+const { port } = config;
 
-app.get('/', (req, res) => {
-  res.send('Привет, мир!');
-});
+app.use(cors());
 
-app.get('/users', (req, res) => {
-  // Выполняем запрос к базе данных
-  db.query('SELECT * FROM user', (error, results, fields) => {
-    if (error) {
-      console.error('Ошибка выполнения запроса:', error);
-      return;
+app.use(express.json());
+
+app.use(router);
+
+const startHTTP = async () => {
+  return new Promise((resolve, reject) => {
+    try {
+      app.listen(port, () => {
+        console.log(`Сервер запущен на порту ${port}`);
+        resolve();
+      });
+    } catch (e) {
+      reject(e);
     }
-    
-    // Выводим результаты запроса
-    res.json(results);
   });
-});
+};
 
-app.get('/products', (req, res) => {
-  // Выполняем запрос к базе данных
-  db.query('SELECT * FROM products', (error, results, fields) => {
-    if (error) {
-      console.error('Ошибка выполнения запроса:', error);
-      return;
-    }
-    
-    // Выводим результаты запроса
-    res.json(results);
-  });
-})
+const bootstrap = async () => {
+  try {
+    await database.connect();
 
+    await startHTTP();
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-app.listen(port, () => {
-  console.log(`Сервер запущен на порту ${port}`);
-});
+bootstrap();
