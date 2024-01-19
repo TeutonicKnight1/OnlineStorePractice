@@ -1,0 +1,49 @@
+@primary-color: #222831;
+@secondary-color: #00ADB5;
+@primary-font-color: white;
+@secondary-font-color: rgb(172, 244, 255);
+
+* {
+    .card-component {
+        margin: 0;
+        width: 320px;
+        height: 180px;
+        background-color:@primary-color;
+        border-radius: 15px;
+        color: @primary-font-color;
+        overflow: hidden;
+
+        .card-component-number {
+            display: inline-block;
+            margin: 25% 0 0 10%;
+            font-size: 24px;
+        }
+        .card-component-div-data-code {
+            display: flex;
+            justify-content: space-between;
+            height: 24px;
+            margin: 1% 55% 0 10%;
+
+            .card-component-date {
+                margin: 0;
+                display: inline-block;
+                font-size: 18px;
+                
+                color: @secondary-font-color;
+            }
+
+            .card-component-code {
+                margin: 0;
+                font-size: 18px;
+            }
+
+            
+        }
+
+        .card-component-owner-name {
+            display: block;
+            margin: 3% 0 0 10%;
+            font-size: 22px;
+        }
+    }
+}

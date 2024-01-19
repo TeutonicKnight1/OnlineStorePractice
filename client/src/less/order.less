@@ -1,0 +1,73 @@
+@primary-color: #222831;
+@secondary-color: #00ADB5;
+@primary-font-color: white;
+@secondary-font-color: rgb(172, 244, 255);
+
+* {
+
+    .order {
+        width: 75vw;
+
+        .order-stepper {
+            margin: 10px;
+            display: flex;
+            justify-content:space-evenly;
+            align-items: center;
+
+            .step {
+                margin: 0;
+                padding: 6px 10px;
+                width: 30px;
+                height: 30px;
+                background-color: @primary-color;
+                color: @primary-font-color;
+                border-radius: 100%;
+            }
+
+            .line {
+                width: 160px;
+                margin: 0;
+                height: 7px;
+                border: 2px @primary-color solid;
+                border-radius: 15px;
+            }
+
+            .line-step-complited {
+                background-color: @secondary-color;
+            }
+
+            .order-stepper-one {
+                display: flex;
+
+                .order-stepper-one-text {
+                    margin-left: 10px;
+                    width: 110px;
+                }
+            }
+
+            .order-stepper-two {
+                display: flex;
+
+                .order-stepper-two-text {
+                    margin-left: 10px;
+                    width: 110px;
+                }
+            }
+
+            .order-stepper-three {
+                display: flex;
+
+                .order-stepper-three-text {
+                    margin-left: 10px;
+                    width: 110px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .order {
+        width: 100%;
+    }
+}

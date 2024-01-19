@@ -1,0 +1,29 @@
+@primary-color: #222831;
+@secondary-color: #00adb5;
+@primary-font-color: white;
+@secondary-font-color: rgb(172, 244, 255);
+
+.user {
+  width: 250px;
+  height: 250px;
+  border: 3px solid black;
+  border-radius: 15px;
+  background-color: white;
+  padding: 10px;
+
+  position: absolute;
+  z-index: 1;
+  top: 95px;
+
+  .user-form {
+    width: 100%;
+
+    .user-form-text {
+      padding: 10px 5px;
+
+      .user-form-text-span {
+        color: @primary-color;
+      }
+    }
+  }
+}

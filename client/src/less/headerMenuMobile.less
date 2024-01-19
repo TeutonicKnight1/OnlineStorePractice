@@ -1,0 +1,75 @@
+@primary-color: #222831;
+@secondary-color: #00adb5;
+@primary-font-color: white;
+@secondary-font-color: rgb(172, 244, 255);
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-mobile-menu-mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: @primary-color;
+  color: @primary-font-color;
+
+  .header-mobile-div-logo-links {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+
+    .header-mobile-logo {
+      background-color: @secondary-color;
+      //margin: 0 10px 5px 10px;
+      border-radius: 15px;
+    }
+
+    .header-mobile-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      text-decoration: none;
+    }
+  }
+
+  .header-mobile-div-phone-order {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px;
+
+    .header-mobile-phone {
+      margin: 15px;
+      .header-mobile-phone-number {
+        font-size: 14px;
+      }
+
+      .header-mobile-phone-city {
+        font-size: 14px;
+        color: @secondary-font-color;
+      }
+    }
+    .header-mobile-order-button {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .header-mobile-cart {
+        .header-mobile-cart-number {
+          font-size: 11px;
+          color: @secondary-font-color;
+        }
+      }
+    }
+  }
+}
