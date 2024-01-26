@@ -11,6 +11,7 @@ const ElementListGoods = ({ id, name, price, image }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
   const count = useSelector((state) => state.listGoods.data[id]?.count);
+  
   const handleAddToCart = () => {
     dispatch(increment({ id }));
     dispatch(

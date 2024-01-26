@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../../../less/mainMenu.less";
 import {
   FormControlLabel,
@@ -8,24 +8,20 @@ import {
   Checkbox,
   Button,
 } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { FilterData } from "../../../slices/listGoodsSlice";
 
 const MainMenu = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.listGoods.data);
 
-  const [priceRange, setPriceRange] = useState([0, 10000]);
+  const [priceRange, setPriceRange] = useState([0, 500]);
+  const [priceEdge, setPriceEdge] = useState([0, 500]);
   const [vendorArr, setVendorArr] = useState({
     MSI: false,
     ASUS: false,
     GIGABYTE: false,
     ASRock: false,
   });
-
-  useEffect(() => {
-    setPriceRange(setMinMaxPrice());
-  }, []);
 
   const handleButtonClick = () => {
     const selectedVendors = Object.keys(vendorArr).filter(
@@ -38,12 +34,6 @@ const MainMenu = () => {
         vendors: selectedVendors,
       })
     );
-  };
-
-  const setMinMaxPrice = () => {
-    const min = Math.min(...data.map((item) => item.price));
-    const max = Math.max(...data.map((item) => item.price));
-    return [min, max];
   };
 
   const handleChange = (event, newValue) => {
@@ -66,6 +56,7 @@ const MainMenu = () => {
     if (newMinValue > newMaxValue) {
       newMaxValue = newMinValue;
     }
+    console.log(newMinValue, newMaxValue);
 
     const newPriceRange = [newMinValue, newMaxValue];
     setPriceRange(newPriceRange);
@@ -73,12 +64,11 @@ const MainMenu = () => {
 
   const handleMaxInputChange = (event) => {
     const newMaxValue =
-      event.target.value !== "" ? parseInt(event.target.value, 10) : 100;
-    const newMinValue = priceRange[0];
-    const newPriceRange = [newMinValue, newMaxValue];
-    console.log(event.target.value, newPriceRange);
-    setPriceRange(newPriceRange);
-  };
+      event.target.value !== "" ? parseInt(event.target.value, 10) : 0;
+    let newMinValue = priceRange[0];
+
+    setPriceRange([newMinValue, newMaxValue]);
+  }
 
   return (
     <div className="main-menu">
@@ -155,8 +145,8 @@ const MainMenu = () => {
               value={priceRange}
               onChange={handleChange}
               valueLabelDisplay="auto"
-              min={setMinMaxPrice()[0]}
-              max={setMinMaxPrice()[1]}
+              min={priceEdge[0]}
+              max={priceEdge[1]}
             />
           </div>
           <div className="main-menu-price-input-range">

@@ -12,11 +12,18 @@ const ListGoods = () => {
     dispatch(sortData());
   }, [dispatch]);
 
+  console.log(DATA.length)
   return (
-    <div className={status === "mobile" ? "list-goods list-goods-mobile" : "list-goods"}>
-      {DATA.map((element) => (
-        <ElementListGoods key={element.id} {...element}/>
-      ))}
+    <div className="list-goods">
+      {DATA.length != 0 ? (
+        DATA.map((element) => (
+          <ElementListGoods key={element.id} {...element} />
+        ))
+      ) : (
+        <div>
+          <p className="list-goods-not-found">Товары не найдены</p>
+        </div>
+      )}
     </div>
   );
 };

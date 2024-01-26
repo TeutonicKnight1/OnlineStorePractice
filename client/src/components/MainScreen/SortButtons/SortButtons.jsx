@@ -1,25 +1,44 @@
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import SearchIcon from "@mui/icons-material/Search";
 import {
   FormControl,
   MenuItem,
   Select,
   ButtonGroup,
   Button,
+  TextField,
 } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
-import { setSort, setSortDirection, sortData } from "../../../slices/listGoodsSlice";
+import { useState } from "react";
+import {
+  setSort,
+  setSortDirection,
+  sortData,
+  searchData,
+} from "../../../slices/listGoodsSlice";
 import "../../../less/sortButtons.less";
 
 const SortButtons = () => {
   const dispatch = useDispatch();
   const type = useSelector((state) => state.listGoods.type);
+  const [searchValue, setSearchValue] = useState("");
 
   const handleClick = (event) => {
     dispatch(setSort(event.target.value));
     dispatch(sortData());
   };
 
+  const handleClickSearch = () => {
+    if (searchValue === "") {
+      return;
+    }
+    console.log(searchValue);
+    dispatch(searchData(searchValue));
+  };
+  const handleSearchInputChange = (event) => {
+    setSearchValue(event.target.value);
+  };
   const handleClickDirection = (direction) => {
     dispatch(setSortDirection(direction));
     dispatch(sortData());
@@ -27,6 +46,27 @@ const SortButtons = () => {
 
   return (
     <div className="main-screen-content-grid-sort">
+      <FormControl id="main-screen-content-grid-search-form">
+        <TextField
+          hiddenLabel
+          sx={{
+            marginRight: "10px",
+            marginBottom: "10px",
+          }}
+          id="main-screen-content-grid-sort-search"
+          size="small"
+          onChange={handleSearchInputChange}
+          placeholder="Поиск"
+          variant="outlined"
+        />
+        <Button
+          onClick={handleClickSearch}
+          sx={{ height: "40px", marginRight: "10px" }}
+          variant="contained"
+        >
+          <SearchIcon size="large" color="secondary" />
+        </Button>
+      </FormControl>
       <FormControl id="main-screen-content-grid-sort-form">
         <Select
           inputProps={{

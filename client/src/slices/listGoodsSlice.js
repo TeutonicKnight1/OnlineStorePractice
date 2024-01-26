@@ -74,6 +74,20 @@ const listGoodsSlice = createSlice({
         state.data = filteredData;
       }
     },
+    searchData: (state, action) => {
+      const query = action.payload.toLowerCase();
+      let filteredData = []
+      if (state.data.length != 0) {
+        filteredData = state.data.filter((item) =>
+          item.name.toLowerCase().includes(query)
+        );
+      } else {
+        filteredData = state.originalData.filter((item) =>
+          item.name.toLowerCase().includes(query)
+        );
+      }
+      state.data = filteredData;
+    },
   },
 });
 
@@ -85,5 +99,6 @@ export const {
   setSortDirection,
   sortData,
   FilterData,
+  searchData,
 } = listGoodsSlice.actions;
 export default listGoodsSlice.reducer;

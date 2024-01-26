@@ -17,7 +17,7 @@ const Footer = ({ mainBlockName }) => {
     const mainBlock = document.querySelector(`.${mainBlockName}`);
     setMainBlockHeight(mainBlock.offsetHeight);
     setViewportHeight(window.innerHeight);
-  }, [mainBlockName]);
+  }, [mainBlockName, viewportHeight]);
 
   return (
     <div className={mainBlockHeight > viewportHeight ? "footer" : "footer footer-sticky-bottom"}>

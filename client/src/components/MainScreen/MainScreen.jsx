@@ -14,7 +14,6 @@ import { useDispatch } from "react-redux";
 import { setData } from "../../slices/listGoodsSlice";
 import { useEffect, useState } from "react";
 
-
 const MainScreen = () => {
   const dispatch = useDispatch();
 
@@ -36,7 +35,6 @@ const MainScreen = () => {
       setDataLoaded(true);
     });
   }, [dispatch]);
-
 
   return (
     <div className="main-screen">
