@@ -37,7 +37,6 @@ const MainMenu = () => {
   };
 
   const handleChange = (event, newValue) => {
-    console.log(newValue);
     setPriceRange(newValue);
   };
 
@@ -68,7 +67,7 @@ const MainMenu = () => {
     let newMinValue = priceRange[0];
 
     setPriceRange([newMinValue, newMaxValue]);
-  }
+  };
 
   return (
     <div className="main-menu">

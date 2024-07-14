@@ -9,7 +9,6 @@ import PropTypes from "prop-types";
 const CartElement = ({id, name, price, image, componentRender, count }) => {
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart.cart);
-    console.log(useSelector((state) => state.listGoods.data));
     const updatedCount = useSelector((state) => state.listGoods.data[id].count);
     const handleAddToCart = () => {
         dispatch(increment({ id }));

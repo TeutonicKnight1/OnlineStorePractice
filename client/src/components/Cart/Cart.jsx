@@ -24,7 +24,6 @@ const Cart = () => {
 
   const componentRender = () => {
     const storedCartData = localStorage.getItem("cart");
-    console.log(storedCartData);
     if (storedCartData) {
       setCart(JSON.parse(storedCartData));
     }

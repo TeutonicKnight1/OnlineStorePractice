@@ -12,7 +12,6 @@ const ListGoods = () => {
     dispatch(sortData());
   }, [dispatch]);
 
-  console.log(DATA.length)
   return (
     <div className="list-goods">
       {DATA.length != 0 ? (
